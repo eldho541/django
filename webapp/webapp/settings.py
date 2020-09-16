@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'music',
     'rest_framework',
+    'personal',
+    'account',
+    'drf_yasg',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'webapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +71,7 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTH_USER_MODEL = 'account.Account'
 WSGI_APPLICATION = 'webapp.wsgi.application'
 
 
